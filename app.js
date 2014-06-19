@@ -12,7 +12,7 @@ var fs = require('fs')
 var gameSizeX = 1280;
 var gameSizeY = 720;
 var nameSizeLimit = 256;
-var runningBehindProxy = false;
+var runningBehindProxy = true;
 
 // time limits, in seconds
 var imageChangeCooldown = 30;
@@ -359,7 +359,7 @@ function fireBullet(player, targetX, targetY)
         player.firstFire = 0;
         player.fireCount = 0;
     }
-    if(player.fireCount !== undefined && player.fireCount > 10)
+    if(player.fireCount !== undefined && player.fireCount > 20)
         return;
 
     player.fireCount++;
